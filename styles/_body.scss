@@ -1,0 +1,244 @@
+.body-pad-top {
+  padding-top: 20px;
+  @include respond($DESKTOP) {
+    padding-top: $text_padding;
+  }
+}
+
+.body-pad-bottom {
+  padding-bottom: 20px;
+  @include respond($DESKTOP) {
+    padding-bottom: $text_padding;
+  }
+}
+
+.sub-heading {
+  font-family: $fancy_text;
+  margin-bottom: $text_padding;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.narrow-container {
+  @extend .container;
+  @include respond($DESKTOP) {
+    max-width: $narrow_container_width;
+  }
+}
+
+.dotted-top {
+  border-top: 3px dotted $orange;
+}
+
+.dotted-bottom {
+  border-bottom: 3px dotted $orange;
+}
+
+.description {
+  padding: 40px 1rem;
+
+  @include respond($DESKTOP) {
+    padding: $text_padding #{2 * $text_padding_value}px;
+  }
+}
+
+.h1-first-letter{
+  margin-bottom: 0;
+
+  &:first-child:first-letter {
+    color: $navy;
+    float: left;
+    font-weight: 900;
+    font-family: $fancy_text;
+    font-style: italic;
+    font-size: 75px;
+    line-height: 50px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+}
+
+.sticky-container {
+  display: none;
+  @include respond($TABLET) {
+    display: block;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.sticky-media {
+  top: $text_padding;
+  display: flex;
+  flex-direction: column;
+  right: -3rem;
+  position: absolute;
+  a {
+    margin-bottom: 10px;
+  }
+}
+
+.phases-container {
+  padding: $text_padding 0;
+  text-transform: uppercase;
+}
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+
+  @include respond($TABLET) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+  }
+
+  @include respond($LAPTOP) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.phase {
+  h4 {
+    font-size: 1.25rem;
+    color: $navy;
+    font-weight: bold;
+  }
+
+  h5 {
+    font-size: 1rem;
+    color: $orange;
+    font-family: $fancy_text;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+
+  ul {
+    padding-left: 1rem;
+    margin-left: 1rem;
+
+    @include respond($TABLET) {
+      border-left: 1px solid $navy;
+      margin-left: 0;
+    }
+  }
+
+  li {
+    position: relative;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: $font_gray;
+    font-weight: bold;
+    list-style: none;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid $navy;
+      background: #FFF;
+      border-radius: 50%;
+      position: absolute;
+      left: -1.5rem;
+      transition: background-color 1.5s ease;
+    }
+
+    &.viewed:before {
+      background: $navy;
+    }
+
+    @include respond($TABLET) {
+      &:last-child:after {
+        content: '';
+        display: block;
+        background: #FFF;
+        height: 50px;
+        position: absolute;
+        width: 0.5rem;
+        top: 1rem;
+        left: -1.25rem
+      }
+    }
+
+  }
+}
+
+.play-video,
+.pause-video {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  height: 100px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+
+  div:hover & {
+    z-index: 1
+  }
+}
+
+.play-video {
+  background-image: url('/images/play.svg');
+  .playing & { display: none }
+}
+
+.pause-video {
+  background-image: url('/images/pause.svg');
+  display: none;
+  .playing & { display: block; }
+}
+
+.quick-links {
+  background-image: url('/images/quick-links-bg.svg');
+  padding: $text_padding 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.plain-heading {
+  color: #fff;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: $text_padding;
+}
+
+.button-links {
+  margin-bottom: $text_padding;
+  display: grid;
+  grid-template: auto / 1fr;
+  gap: 40px 60px;
+
+  @include respond($TABLET) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond($LAPTOP) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  a {
+    padding: 40px;
+    border: 1px solid $navy;
+    background: transparentize($orange, 0.25);
+    color: #FFF;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.25rem;
+    text-align: center;
+
+    &:hover {
+      text-decoration: none;
+      background: $navy;
+      color: #FFF;
+    }
+  }
+}

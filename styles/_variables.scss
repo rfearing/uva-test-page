@@ -1,0 +1,21 @@
+// Break Points:
+$MOBILE: 576px;
+$TABLET: 768px;
+$LAPTOP: 992px;
+$DESKTOP: 1200px;
+
+// Colors
+$orange: #E57200; // Rotunda Orange
+$navy: #232D4B; // Jefferson Blue
+$dark_navy: #141E3C; // Darker Navy
+$light_gray: #F1F1F1;
+$font_gray: #686868;
+
+$container_width: 1140px;
+$narrow_container_width: 800px;
+
+$default_text: 'Libre Franklin', sans-serif;
+$fancy_text: 'Georgia', serif;
+
+$text_padding_value: 60;
+$text_padding: #{$text_padding_value}px;

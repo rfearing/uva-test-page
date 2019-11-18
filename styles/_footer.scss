@@ -1,0 +1,90 @@
+.main-footer {
+  padding: 10px;
+  background: $navy;
+  display: grid;
+  grid-template-areas:
+  "left"
+  "right"
+  "bottom";
+
+  @include respond($LAPTOP) {
+    padding: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left right"
+      "bottom bottom";
+  }
+}
+
+.footer-left {
+  grid-area: left;
+}
+
+.footer-logo {
+  margin: 0 auto 1rem auto;
+  display: block;
+
+  @include respond($LAPTOP) {
+    margin: 0;
+    float: left;
+  }
+}
+
+.footer-right {
+  grid-area: right;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  @include respond($LAPTOP) {
+    margin: 0;
+    justify-content: flex-end;
+  }
+
+  li {
+    list-style: none;
+    color: #FFF;
+
+    @include respond($LAPTOP) {
+      margin-left: $text_padding;
+    }
+  }
+
+  img {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+  }
+}
+
+.footer-bottom {
+  grid-area: bottom;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    @include respond($LAPTOP) {
+      flex-direction: row;
+      margin: 0 0 -10px 0;
+    }
+  }
+
+  li {
+    list-style: none;
+    font-size: 0.7rem;
+    color: #FFF;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+
+    @include respond($LAPTOP) {
+      margin: 1.25rem 1.25rem 0 1.25rem;
+    }
+
+    &:last-child { font-weight: normal; }
+  }
+}

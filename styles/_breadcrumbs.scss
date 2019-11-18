@@ -1,0 +1,98 @@
+.breadcrumbs {
+  * { text-transform: uppercase; }
+
+  h1 {
+    font-weight: 700;
+    color: $navy;
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  nav {
+    background: $light_gray;
+  }
+
+  ul {
+    margin: 0;
+    padding: 10px 0;
+    // Fallback
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // Grid
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 30px;
+
+    @include respond($TABLET) { grid-template-columns: repeat(2, 1fr); }
+    @include respond($LAPTOP) { grid-template-columns: repeat(3, 1fr); }
+    @include respond($DESKTOP) { grid-template-columns: repeat(6, 1fr); }
+  }
+
+  li {
+    list-style: none;
+    font-size: 0.85rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .survey-banner {
+    text-align: center;
+    background: $orange;
+    padding: 10px;
+
+    h4 {
+      font-weight: 700;
+      color: #FFF;
+      margin: 0;
+    }
+  }
+
+  .hero {
+    height: 500px;
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+
+    span {
+      background: transparentize(#E55C00, 0.25);
+      padding: 1rem;
+    }
+
+    .sub-head {
+      margin-bottom: 10px;
+    }
+
+    .main-head {
+      font-family: $fancy_text;
+      font-style: italic;
+      font-weight: 800;
+    }
+
+    @include respond($LAPTOP) {
+      span { padding: 1rem 3rem; }
+      .main-head {
+        letter-spacing: 5px;
+        font-size: 4.5rem;
+      }
+
+      .sub-head {
+        font-size: 4rem;
+        letter-spacing: -2px;
+      }
+    }
+  }
+}
