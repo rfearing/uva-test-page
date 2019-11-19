@@ -128,12 +128,11 @@
         Risus feugiat in ante metus dictum at tempor commodo ullamcorper.
     </p>
 
-    <!-- https://player.vimeo.com/video/369669368?title=0&byline=0&portrait=0&sidedock=0&controls=0 -->
-
     <div class="embed-container my-5" id="uva-video-container">
-        <!-- <button id="play-video" class="play-video" ><span hidden>Play Video</span></button> -->
-        <!-- <button id="pause-video" class="pause-video" ><span hidden>Pause Video</span></button> -->
-        <iframe id="uva-video" src="https://player.vimeo.com/video/369669368" frameborder="0"></iframe>
+        <span class="embed-title">UVA Drama’s Scene Shop Builds a Special Halloween from UVA on Vimeo</span>
+        <button id="play-video" class="play-video"><span hidden>Play Video</span></button>
+        <button id="pause-video" class="pause-video"><span hidden>Pause Video</span></button>
+        <iframe id="uva-video" src="https://player.vimeo.com/video/369669368?title=0&byline=0&portrait=0&sidedock=0&controls=0" frameborder="0"></iframe>
     </div>
 
     <p>
@@ -162,8 +161,7 @@
     </div>
 </div>
 
-
-<!-- <script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
     var iframe = document.getElementById('uva-video');
     var play = document.getElementById('play-video');
@@ -178,4 +176,4 @@
         container.classList.remove('playing');
         player.pause();
     };
-</script> -->
+</script>

@@ -5,7 +5,7 @@
     <nav>
         <div class="container">
             <ul>
-                <li>The Poistion of President</li>
+                <li>The Position of President</li>
                 <li>The Search Process</li>
                 <li>Community engagement</li>
                 <li>About the university</li>

@@ -180,21 +180,66 @@
   background-position: center;
   background-size: cover;
   z-index: -1;
-
-  div:hover & {
-    z-index: 1
-  }
+  background: transparentize($orange, 0.15);
+  z-index: 1
 }
 
 .play-video {
-  background-image: url('/images/play.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid #FFF;
+  }
+
   .playing & { display: none }
 }
 
 .pause-video {
-  background-image: url('/images/pause.svg');
+  .playing:hover & { display: flex; }
+  justify-content: space-evenly;
+  align-items: center;
   display: none;
-  .playing & { display: block; }
+
+  &:before {
+    content: '';
+    background: #FFF;
+    display: block;
+    width: 10px;
+    height: 40px;
+  }
+
+  &:after {
+    content: '';
+    background: #FFF;
+    display: block;
+    width: 10px;
+    height: 40px;
+  }
+
+  .playing:hover & { display: flex; }
+}
+
+.embed-title {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  color: #FFF;
+  left: 215px;
+  bottom: 80px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  .playing & {
+    display: none;
+  }
 }
 
 .quick-links {
